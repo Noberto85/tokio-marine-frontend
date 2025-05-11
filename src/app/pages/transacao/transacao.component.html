@@ -5,30 +5,38 @@
                     <div class="card flex flex-col gap-6 w-full">
                         <div class="font-semibold text-xl">Transação:</div>
                         <div class="flex flex-col md:flex-row gap-6">
-                            <div class="flex flex-wrap gap-2">
+                            <div class="flex-wrap gap-2">
                                 <label for="contaOrigem">Origem:</label>
-                                <input maxlength="50" placeholder="Ag-conta" pInputText id="contaOrigem" name="contaOrigem" formControlName='contaOrigem' type="text" />
+                                <input mask="9999 99999-9" placeholder="Ag-conta" pInputText id="contaOrigem" name="contaOrigem" formControlName='contaOrigem' type="text" />
                                 @if (form.controls['contaOrigem'].invalid && (form.controls['contaOrigem'].touched || form.controls['contaOrigem'].dirty)) {
                                     <small> Esse campo é obrigatório! </small>
                                 }
                             </div>
-                            <div class="flex flex-wrap gap-2">
+                            <div class="flex-wrap gap-2">
                                 <label for="contaDestino">Destino:</label>
-                                <input placeholder="Ag-conta" pInputText id="contaDestino" name="contaDestino" formControlName='contaDestino' type="text" />
+                                <input  mask="9999 99999-9" placeholder="Ag-conta" pInputText id="contaDestino" name="contaDestino" formControlName='contaDestino' type="text" />
                                 @if (form.controls['contaDestino'].invalid && (form.controls['contaDestino'].touched || form.controls['contaDestino'].dirty)) {
                                     <small> Esse campo é obrigatório! </small>
                                 }
                             </div>
                         </div>
+                         <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex-wrap gap-2">
+                               <label for="dataNascimento">Data Nascimento</label>
+                                <p-datepicker placeholder="01/01/9999" class="w-full" id="dataTransferencia" [showIcon]="true"
+                                              [showButtonBar]="true" name="dataTransferencia"
+                                              formControlName="dataTransferencia" dateFormat="dd/mm/yy"></p-datepicker>
+                            </div>
+                          
+                        </div>
                         <div class="flex flex-col md:flex-row gap-6">
-                            <div class="flex flex-wrap gap-2">
-                                <label for="contaOrigem">Valor:</label>
-                                <input maxlength="50" placeholder="Ag-conta" pInputText id="contaOrigem" name="contaOrigem" formControlName='contaOrigem' type="text" />
-                                @if (form.controls['contaOrigem'].invalid && (form.controls['contaOrigem'].touched || form.controls['contaOrigem'].dirty)) {
+                            <div class="flex-wrap gap-2">
+                                <label for="valor">Valor:</label>
+                                <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="Ag-conta" pInputText id="valor" name="valor" formControlName='valor' type="text" />
+                                @if (form.controls['valor'].invalid && (form.controls['valor'].touched || form.controls['valor'].dirty)) {
                                     <small> Esse campo é obrigatório! </small>
                                 }
                             </div>
-                          
                         </div>
                     </div>
                 </div>
