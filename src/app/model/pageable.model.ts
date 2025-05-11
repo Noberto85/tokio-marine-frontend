@@ -12,8 +12,7 @@ export interface Pageable {
 }
 
 export interface ParamsRequest {
-    contaOrigem?: string;
-    contaDestino?: string;
+    search?: string;
     page?: number;
     size?: number;
     orderBy?: string;

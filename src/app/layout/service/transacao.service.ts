@@ -19,13 +19,12 @@ export class TransacaoService {
 
     findAll(params?: ParamsRequest): Observable<ApiTransacaoPageable> {
         const defaultParams: ParamsRequest = {
-            contaDestino: '',
-            contaOrigem: '',
+            search: '',
             page: 0,
-            size: 10, // exemplo de valor padrão
-            orderBy: 'dataCadastro',
+            size: 10,
+            orderBy: 'dataTransferencia',
             direction: 'DESC',
-            ...params, // substitui valores padrão com os fornecidos pelo usuário
+            ...params,
         };
 
         let queryParams = new HttpParams()
@@ -33,13 +32,10 @@ export class TransacaoService {
             .set('size', defaultParams.size.toString())
             .set('orderBy', defaultParams.orderBy)
             .set('direction', defaultParams.direction);
-        if (defaultParams.contaDestino) {
-            queryParams = queryParams.set('contaDestino', defaultParams.contaDestino.toString());
+        if (defaultParams.search) {
+            queryParams = queryParams.set('search', defaultParams.search.toString());
         }
 
-        if (defaultParams.contaOrigem) {
-            queryParams = queryParams.set('contaOrigem', defaultParams.contaOrigem.toString());
-        }
         return this.http.get<ApiTransacaoPageable>(`${environment.api}/api/v1/transferencias`, { params: queryParams });
     }
 }
