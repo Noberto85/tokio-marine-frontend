@@ -22,8 +22,8 @@
                         </div>
                          <div class="flex flex-col md:flex-row gap-6">
                             <div class="flex-wrap gap-2">
-                               <label for="dataAgendamento">Data Nascimento</label>
-                                <p-datepicker placeholder="01/01/9999" class="w-full" id="dataAgendamento" [showIcon]="true"
+                               <label for="dataAgendamento">Data Agendamento</label>
+                                <p-datepicker  [minDate]="minDate" placeholder="01/01/9999" class="w-full" id="dataAgendamento" [showIcon]="true"
                                               [showButtonBar]="true" name="dataAgendamento"
                                               formControlName="dataAgendamento" dateFormat="dd/mm/yy"></p-datepicker>
                             </div>
@@ -32,7 +32,7 @@
                         <div class="flex flex-col md:flex-row gap-6">
                             <div class="flex-wrap gap-2">
                                 <label for="valor">Valor:</label>
-                                <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="Ag-conta" pInputText id="valor" name="valor" formControlName='valor' type="text" />
+                                <input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }" placeholder="R$ 0,00" pInputText id="valor" name="valor" formControlName='valor' type="text" />
                                 @if (form.controls['valor'].invalid && (form.controls['valor'].touched || form.controls['valor'].dirty)) {
                                     <small> Esse campo é obrigatório! </small>
                                 }
@@ -45,8 +45,9 @@
                 <div class="card flex flex-col gap-4 mt-2">
                     <div class="flex flex-wrap gap-2 justify-end">
                         <p-button (click)="envarTransacao()" [disabled]="form.invalid"  label="Enviar" icon="pi pi-check" />
-                        <p-button  label="Cancelar" icon="pi pi-times" severity="danger" />
+                        <p-button (click)="cancel()"  label="Cancelar" icon="pi pi-times" severity="danger" />
                     </div>
                 </div>
             </p-fluid>
         </form>
+        <p-toast />
