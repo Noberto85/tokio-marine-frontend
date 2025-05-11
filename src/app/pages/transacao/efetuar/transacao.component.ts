@@ -13,8 +13,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DatePicker } from 'primeng/datepicker';
 import { NgxMaskDirective } from 'ngx-mask';
 import { CurrencyMaskModule } from "ng2-currency-mask";
-import { TransacaoService } from '../../layout/service/transacao.service';
-import { TransacaoRequest } from '../../model/transacao.model';
+import { TransacaoService } from '../../../layout/service/transacao.service';
+import { TransacaoRequest } from '../../../model/transacao.model';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 
