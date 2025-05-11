@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, Validators } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputMaskModule } from 'primeng/inputmask';
@@ -30,4 +30,6 @@ export class TransacaoComponent {
     dataTransferencia: ['', Validators.required],
     valor: ['', [Validators.required]]
   });
+
+  envarTransacao() { }
 }
