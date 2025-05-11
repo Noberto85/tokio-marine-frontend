@@ -1,0 +1,44 @@
+
+<form [formGroup]="form">
+            <p-fluid>
+                <div class="flex mt-8">
+                    <div class="card flex flex-col gap-6 w-full">
+                        <div class="font-semibold text-xl">Transação:</div>
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex flex-wrap gap-2">
+                                <label for="contaOrigem">Origem:</label>
+                                <input maxlength="50" placeholder="Ag-conta" pInputText id="contaOrigem" name="contaOrigem" formControlName='contaOrigem' type="text" />
+                                @if (form.controls['contaOrigem'].invalid && (form.controls['contaOrigem'].touched || form.controls['contaOrigem'].dirty)) {
+                                    <small> Esse campo é obrigatório! </small>
+                                }
+                            </div>
+                            <div class="flex flex-wrap gap-2">
+                                <label for="contaDestino">Destino:</label>
+                                <input placeholder="Ag-conta" pInputText id="contaDestino" name="contaDestino" formControlName='contaDestino' type="text" />
+                                @if (form.controls['contaDestino'].invalid && (form.controls['contaDestino'].touched || form.controls['contaDestino'].dirty)) {
+                                    <small> Esse campo é obrigatório! </small>
+                                }
+                            </div>
+                        </div>
+                        <div class="flex flex-col md:flex-row gap-6">
+                            <div class="flex flex-wrap gap-2">
+                                <label for="contaOrigem">Valor:</label>
+                                <input maxlength="50" placeholder="Ag-conta" pInputText id="contaOrigem" name="contaOrigem" formControlName='contaOrigem' type="text" />
+                                @if (form.controls['contaOrigem'].invalid && (form.controls['contaOrigem'].touched || form.controls['contaOrigem'].dirty)) {
+                                    <small> Esse campo é obrigatório! </small>
+                                }
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </p-fluid>
+            <p-fluid>
+                <div class="card flex flex-col gap-4 mt-2">
+                    <div class="flex flex-wrap gap-2 justify-end">
+                        <p-button [disabled]="form.invalid"  label="Enviar" icon="pi pi-check" />
+                        <p-button  label="Cancelar" icon="pi pi-times" severity="danger" />
+                    </div>
+                </div>
+            </p-fluid>
+        </form>

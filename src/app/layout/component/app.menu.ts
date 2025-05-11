@@ -23,7 +23,16 @@ export class AppMenu {
             {
                 label: 'Home',
                 items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] }]
-            }
+
+            },
+            {
+                label: 'transação',
+                icon: 'pi pi-fw pi-user',
+                items: [
+                    { label: 'Criar', icon: 'pi pi-file-plus', routerLink: ['/transacao/efetuar'] },
+                    { label: 'Consultar', icon: 'pi pi-file-plus', routerLink: ['/cadastro/dentista'] }
+                ]
+            },
         ];
     }
 }
