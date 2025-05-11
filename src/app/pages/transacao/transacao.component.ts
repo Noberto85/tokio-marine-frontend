@@ -13,6 +13,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { DatePicker } from 'primeng/datepicker';
 import { NgxMaskDirective } from 'ngx-mask';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { TransacaoService } from '../../layout/service/transacao.service';
+import { TransacaoRequest } from '../../model/transacao.model';
 
 
 @Component({
@@ -22,14 +24,20 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
   styleUrl: './transacao.component.scss'
 })
 export class TransacaoComponent {
-
+  transacaoService = inject(TransacaoService);
   private formBuilder = inject(UntypedFormBuilder);
   protected form = this.formBuilder.group({
     contaOrigem: ['', Validators.required],
     contaDestino: ['', Validators.required],
-    dataTransferencia: ['', Validators.required],
+    dataAgendamento: ['', Validators.required],
     valor: ['', [Validators.required]]
   });
 
-  envarTransacao() { }
+  envarTransacao() {
+
+    const transacao: TransacaoRequest = {
+      ...this.form.value
+    };
+    this.transacaoService.create(transacao).subscribe({});
+  }
 }

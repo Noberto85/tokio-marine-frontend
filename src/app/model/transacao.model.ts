@@ -1,6 +1,6 @@
 export interface TransacaoRequest {
     contaOrigem: string;
     contaDestino: string;
-    dataTransferencia: Date;
+    dataAgendamento: Date;
     valor: string;
 }

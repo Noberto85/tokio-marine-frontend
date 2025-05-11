@@ -22,10 +22,10 @@
                         </div>
                          <div class="flex flex-col md:flex-row gap-6">
                             <div class="flex-wrap gap-2">
-                               <label for="dataNascimento">Data Nascimento</label>
-                                <p-datepicker placeholder="01/01/9999" class="w-full" id="dataTransferencia" [showIcon]="true"
-                                              [showButtonBar]="true" name="dataTransferencia"
-                                              formControlName="dataTransferencia" dateFormat="dd/mm/yy"></p-datepicker>
+                               <label for="dataAgendamento">Data Nascimento</label>
+                                <p-datepicker placeholder="01/01/9999" class="w-full" id="dataAgendamento" [showIcon]="true"
+                                              [showButtonBar]="true" name="dataAgendamento"
+                                              formControlName="dataAgendamento" dateFormat="dd/mm/yy"></p-datepicker>
                             </div>
                           
                         </div>
@@ -44,7 +44,7 @@
             <p-fluid>
                 <div class="card flex flex-col gap-4 mt-2">
                     <div class="flex flex-wrap gap-2 justify-end">
-                        <p-button [disabled]="form.invalid"  label="Enviar" icon="pi pi-check" />
+                        <p-button (click)="envarTransacao()" [disabled]="form.invalid"  label="Enviar" icon="pi pi-check" />
                         <p-button  label="Cancelar" icon="pi pi-times" severity="danger" />
                     </div>
                 </div>
