@@ -13,10 +13,11 @@ import { TransacaoService } from '../../../layout/service/transacao.service';
 import { ApiTransacaoPageable } from '../../../model/transacao.model';
 import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParamsRequest } from '../../../model/pageable.model';
+import { ToolbarModule } from 'primeng/toolbar';
 
 @Component({
   selector: 'app-extrato',
-  imports: [PaginatorModule, FormsModule, ReactiveFormsModule, TableModule, IconFieldModule, InputIconModule, InputTextModule, TagModule, CommonModule],
+  imports: [ToolbarModule, PaginatorModule, FormsModule, ReactiveFormsModule, TableModule, IconFieldModule, InputIconModule, InputTextModule, TagModule, CommonModule],
   templateUrl: './extrato.component.html',
   styleUrl: './extrato.component.scss'
 })

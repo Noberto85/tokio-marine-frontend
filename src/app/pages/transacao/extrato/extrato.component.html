@@ -1,5 +1,12 @@
 
-<div class="card">
+   <p-toolbar styleClass="mb-6">
+            <ng-template #start>
+            <i class="pi pi-list" style="font-size: 1.5rem; padding-right: 10px;"></i>
+            <span class="text-2xl color-field">Seu Extrato</span>
+            </ng-template>
+        </p-toolbar>
+ 
+ <div class="card">
             <div class="font-semibold text-xl mb-4"></div>
             <p-table #dt1 [value]="extrato" dataKey="id" [rows]="rows" [rowHover]="true" [showGridlines]="true"  responsiveLayout="scroll">
                 <ng-template #caption>
@@ -9,7 +16,7 @@
                                 <p-inputicon>
                                     <i class="pi pi-search"></i>
                                 </p-inputicon>
-                                <input pInputText type="text" formControlName="search" placeholder="Procure por conta origem ou destino" />
+                                <input pInputText type="text" formControlName="search" placeholder="Procure origem/destino" />
                             </p-iconfield>
                      </div>
                 </form>

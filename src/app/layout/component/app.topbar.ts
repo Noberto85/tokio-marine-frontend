@@ -15,7 +15,7 @@ import { LayoutService } from '../service/layout.service';
             <button class="layout-menu-button layout-topbar-action" (click)="layoutService.onMenuToggle()">
                 <i class="pi pi-bars"></i>
             </button>
-           <span>SAKAI</span>
+           <span>TOKIO MARINE</span>
         </div>
     </div>`
 })
